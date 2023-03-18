@@ -1,50 +1,46 @@
-const Header = (props) => {
-  console.log(props)
+const Header = ({ course }) => {
+  // console.log(course)
   return (
     <div>
       <h1>
-        {props.course}
+        {course.name}
       </h1>
     </div>
   )
 }
 
-
-const Content = (props) => {
- 
-  console.log(props)
-
+const Content = ({ course }) => {
   return (
     <div>
-      {props.parts.map(element => {
+      {course.parts.map(element => {
         console.log(element);
         return (
           <div>
-            <Part part = {element} />
+            <Part part={element} />
           </div>
         )
-
-  })}
+      })}
     </div>
   )
 }
-const Part = (props) => {
-  console.log(props)
 
+const Part = ({ part }) => {
+  // console.log(part)
   return (
     <div>
-      <p>{props.part.name} {props.part.exercises}</p>
+      <p>{part.name} {part.exercises}</p>
     </div>
   )
 }
-const Total = (props) => {
+
+const Total = ({ course }) => {
   // console.log(props)
-const sumEx = props.parts.reduce((prev, cur) => prev + cur.exercises, 0)
+  const sumEx = course.parts.reduce((prev, cur) => prev + cur.exercises, 0)
+  // const sumEx = course.parts[0].exercises + course.parts[1].exercises + course.parts[2].exercises
   return (
     <div>
       <p>
         Number of exercises {sumEx}
-          
       </p>
     </div>
   )
@@ -52,31 +48,31 @@ const sumEx = props.parts.reduce((prev, cur) => prev + cur.exercises, 0)
 
 
 const App = () => {
- 
-  const course = 'Half Stack application development'
-  const parts = [
-    {
-      name: 'Fundamentals of React',
-      exercises: 10
-    },
-    {
-      name: 'Using props to pass data',
-      exercises: 7
-    },
-    {
-      name: 'State of a component',
-      exercises: 14
-    }
-  ]
 
+  const course = {
+    name: 'Half Stack application development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+  }
   return (
     <div>
       <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
-      
+      <Content course={course} />
+      <Total course={course} />
     </div>
-    
+
   )
 }
 
