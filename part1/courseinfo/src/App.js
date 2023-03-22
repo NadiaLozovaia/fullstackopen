@@ -12,10 +12,10 @@ const Header = ({ course }) => {
 const Content = ({ course }) => {
   return (
     <div>
-      {course.parts.map(element => {
-        console.log(element);
+      {course.parts.map(element => {      
+        // console.log(element)
         return (
-          <div>
+          <div key={element.name}> 
             <Part part={element} />
           </div>
         )
