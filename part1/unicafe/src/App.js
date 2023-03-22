@@ -49,13 +49,16 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
   const increaseGood = () => {setGood(good + 1)
-    console.log('increasing, value before', good) }
+    // console.log('increasing, value before', good) 
+  }
 
   const increaseNeutral = () => {setNeutral(neutral + 1)
-    console.log('increasing, value before', neutral)}
+    // console.log('increasing, value before', neutral)
+  }
   
   const increaseBad = () => {setBad(bad + 1)
-    console.log('increasing, value before', bad)}
+    // console.log('increasing, value before', bad)
+  }
   
   
   return (
