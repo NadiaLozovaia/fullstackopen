@@ -7,14 +7,14 @@ const Notification = ({ notification }) => {
     return null
   }
   if (notification.type === 'info')
-  return (
-    <div className='info'>
-      {notification.message}
-    </div>
-  )
+    return (
+      <div className='info'>
+        {notification.message}
+      </div>
+    )
   else return (
     <div className='error'>
-     {notification.message}
+      {notification.message}
     </div>
   )
 }
@@ -66,7 +66,7 @@ const Persons = ({ personsValue, newFilterValue, deletePerson }) => {
       {personsToShow.map(person =>
         <div key={person.id} >
           <li>{person.name} {person.number}
-          <button onClick={() => deletePerson(person.id, person.name)}>delete</button> </li>
+            <button onClick={() => deletePerson(person.id, person.name)}>delete</button> </li>
         </div>
       )}
     </ul>
@@ -94,7 +94,7 @@ const App = () => {
   const addPerson = (event) => {
     event.preventDefault()
     const result = persons.some(element => element.name === newName)
-  
+
     if (result === false) {
 
       const personObject = {
@@ -109,66 +109,86 @@ const App = () => {
           setNewName('')
           setNewNumber('')
           setInfoMessage(
-          {type: 'info', 
-            message:`Added '${newName}'`}
-            )
-            setTimeout(() => {
-              setInfoMessage(null)
-            }, 3000)
-            
-          })
-        
-    }
-    else {
-       if (window.confirm(`${newName} is already added to phonebook. Replace the old number with the new one?`)) {
-      
-      const person = persons.find(person => person.name === newName)
-      const changedPerson = { ...person, number: newNumber }
-      const id = person.id
-      personService
-        .update(id, changedPerson)
-        .then(response => {
-          setPersons(persons.map(person => person.id !== id ? person : response))
-          setNewName('')
-          setNewNumber('')
-          setInfoMessage(
-            {type: 'info', 
-            message: `Changed '${newName}'`}
+            {
+              type: 'info',
+              message: `Added '${newName}'`
+            }
           )
           setTimeout(() => {
             setInfoMessage(null)
           }, 3000)
-
         })
         .catch(error => {
-          
+          const errorMessage = error.response.data.error
+
           setInfoMessage(
-            {type: 'error', 
-            message:`'${newName} ' was already removed from server`}
+            {
+              type: 'error',
+              message: errorMessage
+            }
           )
           setTimeout(() => {
             setInfoMessage(null)
           }, 5000)
-          setPersons(persons.filter(person => person.id !== id ))
-        
+
         })
-      setNewName('')
-      setNewNumber('')
+
     }
-  }
+    else {
+      if (window.confirm(`${newName} is already added to phonebook. Replace the old number with the new one?`)) {
+
+        const person = persons.find(person => person.name === newName)
+        const changedPerson = { ...person, number: newNumber }
+        const id = person.id
+        personService
+          .update(id, changedPerson)
+          .then(response => {
+            setPersons(persons.map(person => person.id !== id ? person : response))
+            setNewName('')
+            setNewNumber('')
+            setInfoMessage(
+              {
+                type: 'info',
+                message: `Changed '${newName}'`
+              }
+            )
+            setTimeout(() => {
+              setInfoMessage(null)
+            }, 3000)
+
+
+          })
+          .catch(error => {
+
+            setInfoMessage(
+              {
+                type: 'error',
+                message: `'${newName} ' was already removed from server`
+              }
+            )
+            setTimeout(() => {
+              setInfoMessage(null)
+            }, 5000)
+            setPersons(persons.filter(person => person.id !== id))
+
+          })
+        setNewName('')
+        setNewNumber('')
+      }
+    }
 
   }
   const deletePersonOf = (id, name) => {
     if (window.confirm(`Delete ${name}`)) {
       console.log('deletePerson', id)
       personService
-      .personDelete(id)
-  
-      .then(_ => {
-        console.log('promise fulfilled')
-        setPersons(persons.filter(person => person.id !== id ))  
-      })
-      
+        .personDelete(id)
+
+        .then(_ => {
+          console.log('promise fulfilled')
+          setPersons(persons.filter(person => person.id !== id))
+        })
+
     }
   }
   const handleFilterChange = (event) => {
