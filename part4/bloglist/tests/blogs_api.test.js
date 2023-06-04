@@ -27,7 +27,7 @@ describe('get blogs tests', () => {
             .expect(200)
             .expect('Content-Type', /application\/json/)
 
-    }, 100000)
+    }, 5000)
 
 
     test('all blogs are returned', async () => {
@@ -349,5 +349,7 @@ describe('when there is initially one user at db', () => {
 
 
 afterAll(async () => {
+
+
     await mongoose.connection.close()
 })

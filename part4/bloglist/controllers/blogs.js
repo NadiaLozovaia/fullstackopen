@@ -60,6 +60,11 @@ blogsRouter.get('/:id', async (request, response) => {
 })
 
 blogsRouter.put('/:id', async (request, response) => {
+    // const token = request.token
+    // const user = request.user
+    const blogOld = await Blog.findById(request.params.id)
+    console.log(blogOld)
+
     const body = request.body
 
     const blog = {
@@ -68,9 +73,12 @@ blogsRouter.put('/:id', async (request, response) => {
         url: body.url,
         likes: body.likes
     }
+
     const updatedblog = await Blog.findByIdAndUpdate(request.params.id, blog, { new: true })
 
     response.status(201).json(updatedblog)
+
+
 })
 
 module.exports = blogsRouter
