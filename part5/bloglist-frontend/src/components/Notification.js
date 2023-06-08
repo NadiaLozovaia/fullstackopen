@@ -1,20 +1,20 @@
 
 
-  const Notification = ({ notification }) => {
+const Notification = ({ notification }) => {
     if (notification === null) {
-      return null
+        return null
     }
     if (notification.type === 'info')
-      return (
-        <div className='info'>
-          {notification.message}
-        </div>
-      )
+        return (
+            <div className='info'>
+                {notification.message}
+            </div>
+        )
     else return (
-      <div className='error'>
-        {notification.message}
-      </div>
+        <div className='error'>
+            {notification.message}
+        </div>
     )
-  }
+}
 
 export default Notification
