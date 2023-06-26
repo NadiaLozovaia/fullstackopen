@@ -24,6 +24,7 @@ const Filter = ({ filterValue, handleFilterChange }) => {
     <form onSubmit={(event) => { event.preventDefault() }}>
       <div>
         filter shown with: <input
+        
           value={filterValue}
           onChange={handleFilterChange} />
       </div>

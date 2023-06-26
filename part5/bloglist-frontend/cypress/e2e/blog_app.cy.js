@@ -108,10 +108,10 @@ describe('Blog app', function () {
                 cy.contains('view').click()
                 cy.get('.blog').eq(0).should('contain', 'a blog created by cypress')
                 cy.get('.blog').eq(1).should('contain', 'a blog created by cypress 1')
-                .contains('Like').click()
+                    .contains('Like').click()
                 cy.get('.blog').eq(0).should('contain', 'a blog created by cypress 1')
                 cy.get('.blog').eq(1).should('contain', 'a blog created by cypress')
-                
+
 
 
             })
