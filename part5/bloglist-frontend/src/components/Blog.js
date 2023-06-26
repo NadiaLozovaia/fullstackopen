@@ -49,11 +49,11 @@ const Blog = ({ blog, likedBlog, deletedBlog, user }) => {
                 <p id='likes'>Likes {likes} <button onClick={handleLike}>Like</button> </p>
                 <p>{blog.author}</p>
                 <p>created by {blog.user.name}</p>
-                
-                {user===blog.user.username&&
-                <div>
-                    <button onClick={handleDelete}>Remove</button>
-                </div>
+
+                {user === blog.user.username &&
+                    <div>
+                        <button onClick={handleDelete}>Remove</button>
+                    </div>
                 }
             </div>
         </div>

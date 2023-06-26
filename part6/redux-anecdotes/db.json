@@ -1,0 +1,49 @@
+{
+  "anecdotes": [
+    {
+      "content": "ghjhjk",
+      "votes": 4,
+      "id": 4
+    },
+    {
+      "content": "fdsf",
+      "votes": 3,
+      "id": 5
+    },
+    {
+      "content": "rer",
+      "votes": 4,
+      "id": 6
+    },
+    {
+      "content": "dfgdfg",
+      "votes": 3,
+      "id": 7
+    },
+    {
+      "content": "rer",
+      "votes": 2,
+      "id": 8
+    },
+    {
+      "content": "dewdw",
+      "votes": 2,
+      "id": 9
+    },
+    {
+      "content": "dsfsdf",
+      "votes": 3,
+      "id": 10
+    },
+    {
+      "content": "Exercises 6.16.-6.19.",
+      "votes": 1,
+      "id": 11
+    },
+    {
+      "content": "Exercises ",
+      "votes": 0,
+      "id": 12
+    }
+  ]
+}

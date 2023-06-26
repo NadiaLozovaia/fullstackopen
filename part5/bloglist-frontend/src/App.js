@@ -26,7 +26,7 @@ const App = () => {
 
             blogs.sort((min, max) => max.likes - min.likes)
             setBlogs(blogs)
-            
+
 
         }
         getBlogs()
