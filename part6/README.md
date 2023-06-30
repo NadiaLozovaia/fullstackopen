@@ -1,4 +1,4 @@
-# Flux-architecture and Redux, React Query
+# State management with Redux, React Query
 
 - Flux-architecture and Redux, ReduxToolkit
 - Communicating with server in a redux application, asynchronous actions and Redux thunk
