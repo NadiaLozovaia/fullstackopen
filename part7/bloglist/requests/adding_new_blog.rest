@@ -1,0 +1,9 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Ensure that everything still works",
+    "author": "Ensure that everything still works",
+    "url": "Ensure that everything still works",
+    "likes": 5
+    }

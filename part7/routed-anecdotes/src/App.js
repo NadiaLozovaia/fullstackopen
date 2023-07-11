@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
   Link,
-  Navigate,
+
 
   useNavigate,
   useMatch
@@ -50,8 +50,7 @@ const AnecdoteList = ({ anecdotes }) => (
 )
 
 const Anecdote = ({ anecdote }) => {
-  // const id = useParams().id
-  // const anecdote = anecdotes.find(n => n.id === Number(id))
+
   return (
     <div>
       <h2>{anecdote.content} by {anecdote.author}</h2>
@@ -84,9 +83,7 @@ const Footer = () => (
 )
 
 const CreateNew = (props) => {
-  // const [content, setContent] = useState('')
-  // const [author, setAuthor] = useState('')
-  // const [info, setInfo] = useState('')
+
   const navigate = useNavigate()
 
   const content = useField('text')
