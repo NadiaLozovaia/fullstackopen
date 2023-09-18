@@ -10,15 +10,6 @@ const parseName = (name) => {
     }
     return name;
 };
-// const isDate = (dateOfBirth: string): boolean => {
-//     return Boolean(Date.parse(dateOfBirth));
-// };
-// const parseDate = (dateOfBirth: unknown): string => {
-//     if (!isString(dateOfBirth) || !isDate(dateOfBirth)) {
-//         throw new Error('Incorrect date: ' + dateOfBirth);
-//     }
-//     return dateOfBirth;
-// };
 const parseDate = (dateOfBirth) => {
     if (!isString(dateOfBirth)) {
         throw new Error('Incorrect or missing dateOfBirth');
@@ -42,7 +33,7 @@ const parseGender = (gender) => {
 };
 const parseOccupation = (occupation) => {
     if (!isString(occupation)) {
-        throw new Error('Incorrect or missing name');
+        throw new Error('Incorrect or missing occupation');
     }
     return occupation;
 };
