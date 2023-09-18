@@ -61,8 +61,17 @@ Learn React, Redux, Node.js, MongoDB, GraphQL, TypeScript, React Native, GitHub 
 - Class components, Miscellaneous
 - Exercises - extending the bloglist
 
+### [Part 8 - GraphQL, Facebook's alternative to REST for communication between browser and server://fullstackopen.com/en/part8)
+- GraphQL-server
+- React and GraphQL
+- Database and user administration
+- Login and updating the cache
+- Fragments and subscriptions
+
+
+
   ![certificate-fullstack](https://github.com/NadiaLozovaia/fullstackopen/assets/65612952/797d66c7-a8cb-4aeb-b55e-41bb7fa3adbb)
+  
+  ![certificate-GraphQL](https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/38261fa7f8795653e8db381be520cbab)
 
-
-
-
+  
